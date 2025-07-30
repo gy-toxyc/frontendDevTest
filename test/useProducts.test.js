@@ -45,11 +45,13 @@ describe('useProducts', () => {
 
     const { result } = renderHook(() => useProducts());
 
-    await waitFor(() => {
-      expect(result.current.products).toEqual([mockProduct]);
-      expect(result.current.loading).toBe(false);
-      expect(result.current.error).toBe(null);
-      expect(cache.saveToCache).toHaveBeenCalledWith('products', [mockProduct]);
-    });
+    await import('@testing-library/react').then(({ waitFor }) =>
+      waitFor(() => {
+        expect(result.current.products).toEqual([mockProduct]);
+        expect(result.current.loading).toBe(false);
+        expect(result.current.error).toBe(null);
+        expect(cache.saveToCache).toHaveBeenCalledWith('products', [mockProduct]);
+      })
+    );
   });
 });

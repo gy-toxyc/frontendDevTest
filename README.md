@@ -1,12 +1,43 @@
-# React + Vite
+# FrontEnd Dev Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta aplicación web muestra una lista de productos, concretamente dispositivos móviles, ofreciendo al usuario la posibilidad de navegar a través de ellos y descubrir los detalles del que más le interese. El usuario podrá elegir el almacenamiento y el color del producto y añadirlo a su cesta.
 
-Currently, two official plugins are available:
+## Dependencias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Antes de ejecutar la aplicación o probarla, es importante tener instaladas ciertas herramientas.
 
-## Expanding the ESLint configuration
+- Node (>= v22.11.0, preferiblemente)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<br>
+
+## Guía de Ejecución
+
+Antes de ejecutar la aplicación web en local, es importante instalar las dependencias en la raíz del proyecto utilizando el siguiente comando (para el cual es necesario tener instalado Node).
+
+```sh
+npm install
+```
+
+Ya con esto, podemos ejecutar la aplicación con el siguiente comando.
+
+```sh
+npm run start
+```
+
+La ejecución estará lista en http://localhost:5173.
+
+<br>
+
+## Guía de Tests
+
+Para ejecutar los tests se deberá realizar la instalación de dependencias de igual manera previamente usando el siguiente comando.
+
+```sh
+npm install
+```
+
+Ahora, ejecutamos el comando para que los tests se lancen.
+
+```sh
+npm run test
+```

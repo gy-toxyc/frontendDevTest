@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import { loadFromCache, saveToCache } from '../utils/cache';
 
 let globalCartCount = 0;

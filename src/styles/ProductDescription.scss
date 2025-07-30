@@ -1,9 +1,11 @@
 $bg-color: #ffffff;
 $text-color: #1c1c1cde;
-$border-color: #e0e0e0;
 $label-color: #666;
-$value-color: #333;
 $title-color: #2c3e50;
+
+$primary-color: #007bff;
+$border-color: #e0e0e0;
+$value-color: #333;
 
 .product-description {
     background: $bg-color;
@@ -33,7 +35,7 @@ $title-color: #2c3e50;
             padding: 0.75rem;
             background: #f8f9fa;
             border-radius: 8px;
-            border-left: 4px solid #007bff;
+            border-left: 4px solid $primary-color;
             transition: all 0.3s ease;
 
             &:hover {
@@ -59,7 +61,6 @@ $title-color: #2c3e50;
     }
 }
 
-// Responsive design
 @media (max-width: 768px) {
     .product-description {
         padding: 1rem;

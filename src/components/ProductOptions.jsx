@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import { useAddToCart } from '../hooks/useAddToCart';
+
 import '../styles/ProductOptions.scss';
 
 const ProductOptions = ({ product }) => {

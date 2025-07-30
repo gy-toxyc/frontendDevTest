@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { loadFromCache, saveToCache } from '../utils/cache';
 
 export function useProduct(id) {

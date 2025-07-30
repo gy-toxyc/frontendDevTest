@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../styles/Image.scss';
 
 const Image = ({ 
@@ -9,7 +10,6 @@ const Image = ({
   loading = 'lazy'
 }) => {
   const handleError = (e) => {
-    // Fallback to a placeholder image if the main image fails to load
     e.target.src = '/placeholder-image.png';
   };
 

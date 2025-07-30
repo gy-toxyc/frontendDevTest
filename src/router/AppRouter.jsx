@@ -1,6 +1,6 @@
-// src/router/AppRouter.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import ProductDetailPage from '../pages/ProductDetailPage'
 import ProductListPage from '../pages/ProductListPage'
 import Layout from '../components/Layout';

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
 import SearchBar from '../components/SearchBar'
 import ProductListElement from '../components/ProductListElement'
+import ProductListSkeleton from '../components/ProductListSkeleton';
 import { useProducts } from '../hooks/useProducts'
 
 import '../styles/ProductListPage.scss'
-import ProductListSkeleton from '../components/ProductListSkeleton';
 
 const ProductListPage = () => {
     const { products, loading, error } = useProducts();
     const [filteredProducts, setFilteredProducts] = useState(products);
 
-    // Update filtered products when products change
     useEffect(() => {
         setFilteredProducts(products);
     }, [products]);

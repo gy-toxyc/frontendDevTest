@@ -1,5 +1,6 @@
 $bg-color: #ffffff;
 $text-color: #1c1c1cde;
+
 $hover-color: #1c1c1c22;
 
 .product-list-container {
@@ -47,7 +48,6 @@ $hover-color: #1c1c1c22;
   }
 }
 
-// Responsive design
 @media (max-width: 1200px) {
   .product-list-container {
     .content-section {

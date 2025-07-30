@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
 import { useProduct } from '../hooks/useProduct'
 import Image from '../components/Image';
 import ProductDescription from '../components/ProductDescription';
 import ProductOptions from '../components/ProductOptions';
 import ProductDetailSkeleton from '../components/ProductDetailSkeleton';
+
 import '../styles/ProductDetailPage.scss';
 
 const ProductDetailPage = () => {

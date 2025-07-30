@@ -1,11 +1,12 @@
 $bg-color: #ffffff;
 $text-color: #1c1c1cde;
 $title-color: #2c3e50;
-$border-color: #e0e0e0;
+
 $primary-color: #007bff;
 $success-color: #28a745;
 $error-color: #dc3545;
 $disabled-color: #6c757d;
+$border-color: #e0e0e0;
 
 .product-options {
     background: $bg-color;
@@ -118,7 +119,6 @@ $disabled-color: #6c757d;
     }
 }
 
-// Responsive design
 @media (max-width: 768px) {
     .product-options {
         padding: 1rem;

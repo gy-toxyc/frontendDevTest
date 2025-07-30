@@ -1,8 +1,9 @@
 $bg-color: #ffffff;
 $text-color: #1c1c1cde;
 
+$primary-color: #007bff;
+$secondary-color: #7ecbff;
 $hover-color: #1c1c1c22;
-$price-color: #007bff;
 
 .product-element {
     width: 240px;
@@ -72,14 +73,14 @@ $price-color: #007bff;
             margin: 0;
             margin-top: 0.5rem;
 
-            color: $price-color;
+            color: $primary-color;
 
             font-size: 1.2rem;
             font-weight: 700;
             font-style: italic;
             
             &.out-of-stock {
-                color: #7ecbff;
+                color: $secondary-color;
             }
         }
     }

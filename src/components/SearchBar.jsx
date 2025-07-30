@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import searchIcon from '../assets/search.svg';
+
 import '../styles/SearchBar.scss';
 
 function SearchBar({ onSearch, placeholder = "Search products...", initialValue = "" }) {

@@ -201,9 +201,9 @@ $cart-count-text-color: #ffffff;
         }
     }
     
-    // Tablet styles
     @media (max-width: 768px) {
         height: 70px;
+
         padding-left: 1rem;
         padding-right: 1rem;
 
@@ -228,9 +228,9 @@ $cart-count-text-color: #ffffff;
         }
     }
 
-    // Mobile styles
     @media (max-width: 480px) {
         height: 60px;
+
         padding-left: 0.75rem;
         padding-right: 0.75rem;
 
@@ -256,6 +256,7 @@ $cart-count-text-color: #ffffff;
 
                 .breadcrumbs-mobile {
                     padding: 8px;
+                    
                     margin-top: 4px;
 
                     .breadcrumbs-list {
@@ -268,6 +269,7 @@ $cart-count-text-color: #ffffff;
         .cart-container {
             width: 28px;
             height: 28px;
+
             padding: 0.4rem;
         }
     }

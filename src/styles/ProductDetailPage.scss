@@ -1,5 +1,6 @@
 $bg-color: #ffffff;
 $text-color: #1c1c1cde;
+
 $hover-color: #1c1c1c22;
 
 .product-details-container {
@@ -28,7 +29,6 @@ $hover-color: #1c1c1c22;
   }
 }
 
-// Responsive design
 @media (max-width: 768px) {
   .product-details-container {
     flex-direction: column;

@@ -1,6 +1,9 @@
+$bg-color: #e0e0e0;
+$bg-color-pulse: #f0f0f0;
+
 .skeleton {
     .skeleton-box {
-      background: #e0e0e0;
+      background: $bg-color;
       border-radius: 8px;
       animation: pulse 1.5s infinite ease-in-out;
     }
@@ -37,13 +40,13 @@
   
   @keyframes pulse {
     0% {
-      background-color: #e0e0e0;
+      background-color: $bg-color;
     }
     50% {
-      background-color: #f0f0f0;
+      background-color: $bg-color-pulse;
     }
     100% {
-      background-color: #e0e0e0;
+      background-color: $bg-color;
     }
   }
   

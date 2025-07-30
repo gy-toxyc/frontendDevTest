@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../styles/Header.scss';
+
 import logo from '../assets/logo.png';
 import cartIcon from '../assets/cart.svg';
+
+import '../styles/Header.scss';
 
 function Header({ cartCount }) {
     const location = useLocation();
@@ -17,7 +19,6 @@ function Header({ cartCount }) {
         return pathnames[pathnames.length - 1].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     };
 
-    // Fetch product info when on product detail page
     useEffect(() => {
         if (pathnames[0] === 'product' && pathnames[1]) {
             const productId = pathnames[1];
@@ -38,15 +39,13 @@ function Header({ cartCount }) {
     }, [pathnames]);
 
     const getBreadcrumbText = (name, idx) => {
-        // If it's the product ID and we have product info, show brand + model
         if (pathnames[0] === 'product' && idx === 1 && productInfo) {
             return `${productInfo.brand} ${productInfo.model}`;
         }
-        // Otherwise show the original name
+        
         return decodeURIComponent(name);
     };
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -73,7 +72,6 @@ function Header({ cartCount }) {
                 </div>
 
                 <div className="navigation-section" ref={dropdownRef}>
-                    {/* Desktop breadcrumbs */}
                     <nav className="breadcrumbs-desktop" aria-label="breadcrumb">
                         <ol className="breadcrumbs-list" style={{ listStyle: 'none', display: 'inline-flex', padding: 0, margin: 0 }}>
                             <li>
@@ -93,7 +91,6 @@ function Header({ cartCount }) {
                         </ol>
                     </nav>
 
-                    {/* Mobile page indicator */}
                     <div 
                         className={`mobile-page-indicator ${pathnames.length > 0 ? 'clickable' : ''}`}
                         onClick={() => pathnames.length > 0 && setShowBreadcrumbs(!showBreadcrumbs)}
@@ -108,7 +105,6 @@ function Header({ cartCount }) {
                         )}
                     </div>
 
-                    {/* Mobile breadcrumbs dropdown */}
                     {showBreadcrumbs && pathnames.length > 0 && (
                         <nav className="breadcrumbs-mobile" aria-label="breadcrumb">
                             <ol className="breadcrumbs-list" style={{ listStyle: 'none', padding: 0, margin: 0 }}>

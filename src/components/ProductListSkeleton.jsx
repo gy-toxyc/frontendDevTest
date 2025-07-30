@@ -1,10 +1,13 @@
 import React from 'react';
+
 import '../styles/ProductListSkeleton.scss';
 
 function ProductListSkeleton() {
+  const SKELETON_ELEMENTS = 15;
+  
   return (
     <div className="products-grid">
-      {[...Array(15)].map((_, i) => (
+      {[...Array(SKELETON_ELEMENTS)].map((_, i) => (
         <div key={i} className="product-element skeleton">
           <div className="product-image-container">
             <div className="skeleton-box skeleton-image" />

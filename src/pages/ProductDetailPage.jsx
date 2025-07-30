@@ -21,7 +21,7 @@ const ProductDetailPage = () => {
             <div className="product-image">
                 <Image 
                     src={product.imgUrl} 
-                    alt={product.model.toLowerCase().replace("", "_")}
+                    alt={product.model.toLowerCase().replace(/ /g, "_")}
                 />
             </div>
             <div className="product-info">

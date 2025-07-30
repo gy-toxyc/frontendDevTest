@@ -1,0 +1,184 @@
+$bg-color: #ffffff;
+$text-color: #1c1c1cde;
+$title-color: #2c3e50;
+
+$primary-color: #007bff;
+$success-color: #28a745;
+$error-color: #dc3545;
+$disabled-color: #6c757d;
+$border-color: #e0e0e0;
+
+.product-options {
+    background: $bg-color;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+
+    .options-title {
+        color: $title-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 1.5rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid $border-color;
+    }
+
+    .options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .option-label {
+                color: $text-color;
+                font-weight: 500;
+                font-size: 1rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .option-select {
+                padding: 0.75rem;
+                border: 2px solid $border-color;
+                border-radius: 8px;
+                font-size: 1rem;
+                background: $bg-color;
+                color: $text-color;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                &:focus {
+                    outline: none;
+                    border-color: $primary-color;
+                    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+                }
+
+                &:hover {
+                    border-color: $primary-color;
+                }
+
+                option {
+                    padding: 0.5rem;
+                    background: $bg-color;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+
+    .add-to-cart-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .add-to-cart-button {
+            padding: 1rem 2rem;
+            background: $primary-color;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+
+            &:hover:not(:disabled) {
+                background: darken($primary-color, 10%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            }
+
+            &:active:not(:disabled) {
+                transform: translateY(0);
+            }
+
+            &:disabled {
+                background: $disabled-color;
+                cursor: not-allowed;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        .error-message {
+            color: $error-color;
+            font-size: 0.9rem;
+            margin: 0;
+            padding: 0.5rem;
+            background: rgba(220, 53, 69, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid $error-color;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .product-options {
+        padding: 1rem;
+        margin: 0.5rem 0;
+
+        .options-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .options-container {
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+
+            .option-group {
+                .option-label {
+                    font-size: 0.95rem;
+                }
+
+                .option-select {
+                    padding: 0.6rem;
+                    font-size: 0.95rem;
+                }
+            }
+        }
+
+        .add-to-cart-section {
+            .add-to-cart-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .product-options {
+        padding: 0.75rem;
+
+        .options-title {
+            font-size: 1.1rem;
+        }
+
+        .options-container {
+            .option-group {
+                .option-label {
+                    font-size: 0.9rem;
+                }
+
+                .option-select {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .add-to-cart-section {
+            .add-to-cart-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+    }
+} 

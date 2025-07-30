@@ -1,0 +1,80 @@
+$skeleton-bg: #e0e0e0;
+$skeleton-gradient: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 37%, #e0e0e0 63%);
+$skeleton-animation-duration: 1.4s;
+
+.product-element.skeleton {
+  cursor: pointer;
+  pointer-events: none;
+
+  .skeleton-box {
+    background: $skeleton-bg;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -150%;
+      height: 100%;
+      width: 150%;
+      background: $skeleton-gradient;
+      animation: shimmer $skeleton-animation-duration linear infinite;
+    }
+  }
+
+  .skeleton-image {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    .skeleton-text {
+      height: 16px;
+      border-radius: 4px;
+
+      &.short {
+        width: 40%;
+      }
+      &.medium {
+        width: 70%;
+      }
+      &.price {
+        width: 30%;
+        height: 20px;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-element.skeleton {
+    .skeleton-image {
+      height: 150px;
+    }
+    .product-info {
+      .skeleton-text {
+        height: 14px;
+      }
+      .price {
+        height: 18px;
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
 import SearchBar from '../components/SearchBar'
 import ProductListElement from '../components/ProductListElement'
+import ProductListSkeleton from '../components/ProductListSkeleton';
 import { useProducts } from '../hooks/useProducts'
 
 import '../styles/ProductListPage.scss'
@@ -9,7 +11,6 @@ const ProductListPage = () => {
     const { products, loading, error } = useProducts();
     const [filteredProducts, setFilteredProducts] = useState(products);
 
-    // Update filtered products when products change
     useEffect(() => {
         setFilteredProducts(products);
     }, [products]);
@@ -31,7 +32,19 @@ const ProductListPage = () => {
         setFilteredProducts(filtered);
     };
 
-    if (loading) return <p>Cargando...</p>;
+    if (loading) {
+        return (
+          <div className="product-list-container">
+            <div className="search-section">
+              <SearchBar onSearch={() => {}} placeholder="Search products..." />
+            </div>
+            <div className="content-section">
+              <ProductListSkeleton />
+            </div>
+          </div>
+        );
+    }
+
     if (error) return <p>Error al cargar productos</p>;
 
     return (

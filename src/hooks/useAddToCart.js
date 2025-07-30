@@ -34,11 +34,9 @@ export function useAddToCart() {
     if (cachedCartCount !== null) {
       globalCartCount = cachedCartCount;
       setCartCount(cachedCartCount);
-      console.log('Cart count loaded from cache:', cachedCartCount);
     }
 
     const unsubscribe = subscribeToCart((newCount) => {
-      console.log('Cart count updated to:', newCount);
       setCartCount(newCount);
     });
 
@@ -58,18 +56,13 @@ export function useAddToCart() {
 
       const data = await res.json();
       
-      console.log('API response:', data);
-      console.log('Previous cart count:', globalCartCount);
-      
       let newCount;
       if (data.count === 1 && globalCartCount > 0) {
         newCount = incrementCartCount();
-        console.log('Using local increment, new count:', newCount);
       } else {
         newCount = data.count;
         notifyCartListeners(newCount);
         saveToCache('cart_count', newCount);
-        console.log('Using API count:', newCount);
       }
       
       return newCount;

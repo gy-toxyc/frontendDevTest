@@ -4,6 +4,7 @@ import ProductListElement from '../components/ProductListElement'
 import { useProducts } from '../hooks/useProducts'
 
 import '../styles/ProductListPage.scss'
+import ProductListSkeleton from '../components/ProductListSkeleton';
 
 const ProductListPage = () => {
     const { products, loading, error } = useProducts();
@@ -31,7 +32,19 @@ const ProductListPage = () => {
         setFilteredProducts(filtered);
     };
 
-    if (loading) return <p>Cargando...</p>;
+    if (loading) {
+        return (
+          <div className="product-list-container">
+            <div className="search-section">
+              <SearchBar onSearch={() => {}} placeholder="Search products..." />
+            </div>
+            <div className="content-section">
+              <ProductListSkeleton />
+            </div>
+          </div>
+        );
+    }
+
     if (error) return <p>Error al cargar productos</p>;
 
     return (

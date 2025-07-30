@@ -5,6 +5,7 @@ import { useAddToCart } from '../hooks/useAddToCart';
 
 function Layout() {
     const { cartCount } = useAddToCart();
+    
     return (
         <>
             <Header cartCount={cartCount} />

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'sonner';
 
 import { useAddToCart } from '../hooks/useAddToCart';
 
@@ -37,7 +38,7 @@ const ProductOptions = ({ product }) => {
 
     const handleAddToCart = async () => {
         if (!selectedStorage || !selectedColor) {
-            alert('Por favor selecciona tanto el almacenamiento como el color.');
+            toast.error('Por favor selecciona tanto el almacenamiento como el color.');
             return;
         }
 
@@ -48,10 +49,9 @@ const ProductOptions = ({ product }) => {
                 storageCode: selectedStorage
             });
             
-            alert('Producto añadido al carrito correctamente.');
-        } catch (err) {
-            console.error('Error al añadir al carrito:', err);
-            alert('Error al añadir el producto al carrito.');
+            toast.success('Producto añadido al carrito correctamente.');
+        } catch {
+            toast.error('Error al añadir el producto al carrito.');
         }
     };
 

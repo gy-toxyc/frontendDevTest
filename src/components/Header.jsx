@@ -29,8 +29,7 @@ function Header({ cartCount }) {
                         setProductInfo({ brand: data.brand, model: data.model });
                     }
                 })
-                .catch(err => {
-                    console.error('Error fetching product info:', err);
+                .catch(() => {
                     setProductInfo(null);
                 });
         } else {

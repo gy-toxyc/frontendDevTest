@@ -64,8 +64,8 @@ describe('useAddToCart', () => {
           colorCode: '1',
           storageCode: '1',
         });
-      } catch (e) {
-        console.error("Handling API error.");
+      } catch (err) {
+        console.error(err.message);
       }
     });
   

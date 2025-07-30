@@ -65,7 +65,7 @@ describe('useAddToCart', () => {
           storageCode: '1',
         });
       } catch (e) {
-        console.error("API Error handling.");
+        console.error("Handling API error.");
       }
     });
   

@@ -5,8 +5,6 @@ const Image = ({
   src,
   alt,
   className = '',
-  width,
-  height,
   onClick,
   loading = 'lazy'
 }) => {
@@ -20,8 +18,6 @@ const Image = ({
       src={src}
       alt={alt}
       className={`image-component ${className}`}
-      width={width}
-      height={height}
       onClick={onClick}
       loading={loading}
       onError={handleError}

@@ -1,73 +1,15 @@
 .image-component {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  height: 400px;
+
   object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: .3s;
   
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0px 0px 10px #00000039);
   }
   
   &:active {
     transform: scale(0.98);
-  }
-  
-  // Responsive sizing
-  &.small {
-    max-width: 100px;
-    height: 100px;
-  }
-  
-  &.medium {
-    max-width: 200px;
-    height: 200px;
-  }
-  
-  &.large {
-    max-width: 300px;
-    height: 300px;
-  }
-  
-  &.full-width {
-    width: 100%;
-    height: auto;
-  }
-  
-  // Rounded variants
-  &.rounded {
-    border-radius: 50%;
-  }
-  
-  &.rounded-sm {
-    border-radius: 4px;
-  }
-  
-  &.rounded-lg {
-    border-radius: 12px;
-  }
-  
-  // Border variants
-  &.bordered {
-    border: 2px solid #e0e0e0;
-  }
-  
-  &.bordered-primary {
-    border: 2px solid #007bff;
-  }
-  
-  // Shadow variants
-  &.shadow-sm {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  &.shadow-md {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-  }
-  
-  &.shadow-lg {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   }
 } 

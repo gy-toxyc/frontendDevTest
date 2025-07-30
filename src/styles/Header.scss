@@ -51,9 +51,88 @@ $cart-count-text-color: #ffffff;
                 height: 100%;
             }
         }
+
+        .navigation-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .breadcrumbs-desktop {
+                display: block;
+            }
+
+            .mobile-page-indicator {
+                display: none;
+                align-items: center;
+                gap: 8px;
+                padding: 8px 12px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                border: 1px solid #e9ecef;
+                transition: .3s;
+
+                &.clickable {
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: #e9ecef;
+                    }
+                }
+
+                .current-page-title {
+                    font-weight: 600;
+                    color: $text-color;
+                    font-size: 0.9rem;
+                }
+
+                .breadcrumbs-toggle {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px;
+                    border-radius: 4px;
+                    color: $text-color;
+                    transition: .3s;
+
+                    svg {
+                        transition: transform 0.3s ease;
+                    }
+
+                    &.active svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .breadcrumbs-mobile {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: $bg-color;
+                border: 1px solid #e9ecef;
+                border-radius: 8px;
+                padding: 12px;
+                margin-top: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+
+                .breadcrumbs-list {
+                    flex-direction: column;
+                    gap: 8px;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                    }
+                }
+            }
+        }
     
         .breadcrumbs-list {
-            .breadcrumbs-link-element, .breadcrumbs-element {
+            .breadcrumbs-element {
                 padding: .5rem;
     
                 border-radius: 8px;
@@ -66,8 +145,12 @@ $cart-count-text-color: #ffffff;
                 transition: .3s;
             }
     
-            .breadcrumbs-link-element:hover {
-                background-color: $hover-color;
+            .breadcrumbs-link-element {
+                @extend .breadcrumbs-element;
+
+                &:hover {
+                    background-color: $hover-color;
+                }
             }
         }
     }
@@ -118,19 +201,74 @@ $cart-count-text-color: #ffffff;
         }
     }
     
+    // Tablet styles
     @media (max-width: 768px) {
-        .logo-container {
-            width: 15%;
-            min-width: 60px;
-            max-width: 80px;
+        height: 70px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        .right-side {
+            gap: 15px;
+
+            .logo-container {
+                width: 15%;
+                min-width: 60px;
+                max-width: 80px;
+            }
+
+            .navigation-section {
+                .breadcrumbs-desktop {
+                    display: none;
+                }
+
+                .mobile-page-indicator {
+                    display: flex;
+                }
+            }
         }
     }
 
+    // Mobile styles
     @media (max-width: 480px) {
-        .logo-container {
-            width: 20%;
-            min-width: 50px;
-            max-width: 60px;
+        height: 60px;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+
+        .right-side {
+            gap: 12px;
+
+            .logo-container {
+                width: 20%;
+                min-width: 50px;
+                max-width: 60px;
+            }
+
+            .navigation-section {
+                .mobile-page-indicator {
+                    .current-page-title {
+                        font-size: 0.8rem;
+                    }
+
+                    .breadcrumbs-toggle {
+                        padding: 2px;
+                    }
+                }
+
+                .breadcrumbs-mobile {
+                    padding: 8px;
+                    margin-top: 4px;
+
+                    .breadcrumbs-list {
+                        gap: 6px;
+                    }
+                }
+            }
+        }
+
+        .cart-container {
+            width: 28px;
+            height: 28px;
+            padding: 0.4rem;
         }
     }
 }

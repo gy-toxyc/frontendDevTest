@@ -24,7 +24,7 @@ function ProductListElement({ product }) {
                 <h3 className="product-model">{model}</h3>
                 <p className="product-brand">{brand}</p>
                 <p className={`product-price ${isOutOfStock ? 'out-of-stock' : ''}`}>
-                    {isOutOfStock ? 'Out of Stock' : `${price} €`}
+                    {isOutOfStock ? 'Precio no Disponible' : `${price} €`}
                 </p>
             </div>
         </Link>

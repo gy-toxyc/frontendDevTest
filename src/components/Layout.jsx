@@ -3,11 +3,11 @@ import Header from './Header';
 import { Outlet } from 'react-router-dom';
 import { useAddToCart } from '../hooks/useAddToCart';
 
-function Layout({ children }) {
-    const { cartCount, setCartCount } = useAddToCart();
+function Layout() {
+    const { cartCount } = useAddToCart();
     return (
         <>
-            <Header cartCount={cartCount} setCartCount={setCartCount} />
+            <Header cartCount={cartCount} />
             <Outlet />
         </>
     );

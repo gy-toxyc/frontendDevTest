@@ -65,7 +65,7 @@ describe('useAddToCart', () => {
           storageCode: '1',
         });
       } catch (err) {
-        console.error(err.message);
+        // Error is expected and will be asserted below.
       }
     });
   

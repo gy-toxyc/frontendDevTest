@@ -64,7 +64,7 @@ describe('useAddToCart', () => {
           colorCode: '1',
           storageCode: '1',
         });
-      } catch (err) {
+      } catch {
         // Error is expected and will be asserted below.
       }
     });

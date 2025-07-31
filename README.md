@@ -14,13 +14,13 @@ Antes de ejecutar la aplicación o probarla, es importante tener instaladas cier
 
 Antes de ejecutar la aplicación web en local, es importante instalar las dependencias en la raíz del proyecto utilizando el siguiente comando (para el cual es necesario tener instalado Node).
 
-```sh
+```bash
 npm install
 ```
 
 Ya con esto, podemos ejecutar la aplicación con el siguiente comando.
 
-```sh
+```bash
 npm run start
 ```
 
@@ -32,12 +32,12 @@ La ejecución estará lista en http://localhost:5173.
 
 Para ejecutar los tests se deberá realizar la instalación de dependencias de igual manera previamente usando el siguiente comando.
 
-```sh
+```bash
 npm install
 ```
 
 Ahora, ejecutamos el comando para que los tests se lancen.
 
-```sh
+```bash
 npm run test
 ```
